@@ -1,6 +1,6 @@
 <h1> All bookings </h1>
 <h3>Add a car to your <%= @booking %> list</h3>
-<%= simple_form_for [@user, @booking] do |f| %>
+<%= simple_form_for [@car, @booking] do |f| %>
   <%= f.input :start_date, placeholder: 'Enter the start date' %>
   <%= f.input :end_date, placeholder: 'Enter the end date' %>
   <%= f.association :car, prompt: "Select a car" %>
