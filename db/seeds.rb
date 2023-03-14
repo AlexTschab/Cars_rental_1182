@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Car.create(brand: "Toyota" , model: "Corolla" , fuel_type: "disel", transmission: "Manual", year_of_production: "2010", user: User.first)
+Car.create(brand: "Honda", model: "Civic", fuel_type: "disel", transmission: "Manual", year_of_production: "2008", user: User.first)
+Car.create(brand: "Audi", model: "A3", fuel_type: "Petrol", transmission: "Automatic", year_of_production: "2015", user: User.first)
+Car.create(brand: "Nissan", model: "Micra", fuel_type: "Petro", transmission: "Manual", year_of_production: "2012", user: User.first)
+Car.create(brand: "Toyota", model: "Auris", fuel_type: "disel", transmission: "Manual", year_of_production: "2015", user: User.first)
+Car.create(brand: "Fiat", model: "Panda", fuel_type: "disel", transmission: "Manual", year_of_production: "2016", user: User.first)
