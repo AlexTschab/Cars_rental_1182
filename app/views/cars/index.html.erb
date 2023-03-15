@@ -1,12 +1,20 @@
 <div class="container">
 
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.volvocars.com/images/v/-/media/market-assets/us/applications/dotcom/images/homepage/local-content/2560-x-1096.jpg?&iar=0&w=1000);">
+
+<div class="banner-text">
     <h1>TAQ Car Rentals<strong></h1>
       <h4>Looking for a vehicle? We have the best deals.<h4>
-</div>
+</div></div>
+<div class="cards">
  <% @cars.each do |car| %>
+  <div class="card">
         <%= link_to car.brand, car_path(car)  %>
+        <%= car.model %>
+        <%= car.year_of_production %>
+      </div>
   <%end%>
- </div>
- <p> <%= link_to "New car", new_car_path %> </p>
+</div>
 
+ <p class="new-car-link"> <%= link_to "New car", new_car_path %> </p>
+ </div>
