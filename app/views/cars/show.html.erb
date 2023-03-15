@@ -1,10 +1,21 @@
-<h1> Detailed information about car </h1>
-<ul>
-<li> <%= @car.brand %></li>
-<li> <%= @car.model %></li>
-<li> <%= @car.fuel_type %></li>
-<li> <%= @car.transmission %></li>
-<li> <%= @car.year_of_production %></li>
-</ul>
-<p><%= link_to "Book this car", new_car_booking_path(@car)%></p>
-<p><%= link_to "Back to cars", cars_path %></p>
+<div class="container-show">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/premium-vector/high-speed-car-banner-template-with-glowing-low-poly-graphic-car_468958-34.jpg);">
+  </div>
+  <div class= card>
+    <h1> Great News! </h1>
+    <h2> You can book a car with just a click </h2>
+    <br>
+     <i class="fa-solid fa-car"></i> <%= @car.brand %>
+    <br>
+     <i class="fa-brands fa-monero"></i> <%= @car.model %>
+    <br>
+     <i class="fa-solid fa-gas-pump"></i> <%= @car.fuel_type %>
+    <br>
+     <i class="fa-solid fa-gears"></i> <%= @car.transmission %>
+    <br>
+    <i class="fa-duotone fa-calendar-days"> </i> <%= @car.year_of_production %></li>
+    <br>
+    <p><%= link_to "Book this car", new_car_booking_path(@car), class: "btn btn-info", data: { turbo_method: :book, turbo_confirm: "Are you sure you want to book this car?" }%></p>
+    <p><%= link_to "Back to cars", cars_path, class: "btn btn-success"%></p>
+  </div>
+</div>
