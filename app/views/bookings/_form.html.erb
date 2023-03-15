@@ -1,0 +1,11 @@
+
+<div class="container booking-form">
+  <h3>Book the <%= @car.brand%> <%= @car.model %> </h3>
+  <%= simple_form_for [@car, @booking] do |f| %>
+    <%= f.input :start_date, :start_year => Date.today.year , :end_year => Date.today.year + 2 %>
+    <%= f.input :end_date, :start_year => Date.today.year , :end_year => Date.today.year + 2 %>
+    <div class="bottom-form"><%= f.submit class: "btn-create" %>
+      <% end %>
+      <p class="btn-back"><i class="fa-sharp fa-solid fa-arrow-left"></i><%= link_to "Back", car_path(@car) %> </p>
+    </div>
+</div>
