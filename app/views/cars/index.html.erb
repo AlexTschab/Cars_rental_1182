@@ -1,5 +1,11 @@
-<h1> Save any kind of cars </h1>
+<div class="container">
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.volvocars.com/images/v/-/media/market-assets/us/applications/dotcom/images/homepage/local-content/2560-x-1096.jpg?&iar=0&w=1000);">
+    <h1>TAQ Car Rentals<strong></h1>
+      <h4>Looking for a vehicle? We have the best deals.<h4>
+</div>
  <% @cars.each do |car| %>
         <%= link_to car.brand, car_path(car)  %>
   <%end%>
- <p> <%= link_to "New cars", new_car_path %> </p>
+ <p> <%= link_to "New Cars", new_car_path %> </p>
+  </div>
