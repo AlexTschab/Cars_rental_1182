@@ -11,3 +11,30 @@
   color: rgb(14, 0, 27);
   font-style: 'Smokum', cursive;
 }
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 20px ;
+  width: 70%;
+  height: 300px;
+}
+
+.banner-text {
+  color: white;
+  text-align: left;
+}
+
+.card {
+  width: 100px;
+  height: 150px;
+  margin: 10px;
+}
+
+.cards {
+  display: flex;
+
+}
+
+.new-car-link {
+  margin-left: 20px;
+}
