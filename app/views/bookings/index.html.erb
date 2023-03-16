@@ -1,16 +1,16 @@
 <h1>Your bookings</h1>
-
-
-<% @bookings.each do |booking|%>
-<ul>
-<li><%= booking.car.brand %></li>
-<li><%= booking.car.model  %></li>
-<li><%= booking.start_date %></li>
-<li><%= booking.end_date %></li>
-<li> <%= link_to "Edit Booking", edit_booking_path(booking) %></li>
-<li> <%= link_to "Delete",
-  booking_path(booking),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%> </li>
-</ul>
-<% end %>
+<div class="banner-bookings" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1678902439188-3b9fb4b1afc4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);">
+  <% @bookings.each do |booking|%>
+  <ul>
+  <li><%= booking.car.brand %></li>
+  <p><%= booking.car.model  %></p>
+  <p><%= booking.start_date %></p>
+  <p><%= booking.end_date %></p>
+  <p> <%= link_to "Edit Booking", edit_booking_path(booking), class: "button-booking"  %></p>
+  <p> <%= link_to "Delete",
+    booking_path(booking), class: "button-booking1",
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %> </p>
+  </ul>
+  <% end %>
+</div>
