@@ -2,7 +2,7 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
-#
+User.create(email: "anything@email.com", password: "123456")
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 Car.create(brand: "Toyota" , model: "Corolla" , fuel_type: "disel", transmission: "Manual", year_of_production: "2010", user: User.first)
