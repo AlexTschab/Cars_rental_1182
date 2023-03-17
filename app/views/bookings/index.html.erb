@@ -1,17 +1,45 @@
-<h1>Your bookings</h1>
+
 <div class="banner-bookings" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1678902439188-3b9fb4b1afc4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);">
-  <% @bookings.each do |booking|%>
-  <ul class= "bookings-overview">
-  <li>Brand: <%= booking.car.brand %></li>
-  <li> Model: <%= booking.car.model  %></li>
-   <li>From: <%= booking.start_date %></li>
-   <li>To: <%= booking.end_date %></li>
-   <li> Owner: <%= booking.car.user.email %></li>
-   <%= link_to "Edit Booking", edit_booking_path(booking), class: "button-booking"  %></p>
-   <%= link_to "Delete",
-    booking_path(booking), class: "button-booking1",
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %> </li>
-  </ul>
-  <% end %>
+  <div class="bookings-and-requests">
+    <div class="bookings">
+      <h1>Your bookings</h1>
+      <% @bookings.each do |booking|%>
+      <% if booking.car.user != current_user %>
+        <ul class= "bookings-overview">
+        <li>Brand: <%= booking.car.brand %></li>
+        <li> Model: <%= booking.car.model  %></li>
+        <li>From: <%= booking.start_date %></li>
+        <li>To: <%= booking.end_date %></li>
+        <li> Owner: <%= booking.car.user.email %></li>
+        <%= link_to "Edit Booking", edit_booking_path(booking), class: "button-booking"  %></p>
+        <%= link_to "Delete",
+          booking_path(booking), class: "button-booking1",
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %> </li>
+        </ul>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="bookings">
+      <h1>Requests for your cars</h1>
+      <% @bookings.each do |booking|%>
+      <% if booking.car.user == current_user %>
+        <ul class= "bookings-overview">
+        <li>Brand: <%= booking.car.brand %></li>
+        <li> Model: <%= booking.car.model  %></li>
+        <li>From: <%= booking.start_date %></li>
+        <li>To: <%= booking.end_date %></li>
+        <li> Owner: <%= booking.car.user.email %></li>
+        <%= link_to "Edit Booking", edit_booking_path(booking), class: "button-booking"  %></p>
+        <%= link_to "Delete",
+          booking_path(booking), class: "button-booking1",
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %> </li>
+        </ul>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
 </div>
