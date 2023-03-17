@@ -4,6 +4,7 @@
   <div class= card-show>
     <br>
     <h1> Great News! </h1>
+    <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
     <h2> You can book a car with just a click </h2>
     <br>
      <i class="fa-solid fa-car"></i> <%= @car.brand %>
