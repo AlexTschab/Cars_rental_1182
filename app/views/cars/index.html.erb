@@ -3,39 +3,29 @@
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.volvocars.com/images/v/-/media/market-assets/us/applications/dotcom/images/homepage/local-content/2560-x-1096.jpg?&iar=0&w=1000);">
 
 <div class="banner-text">
-    <h1>TAQ Car Rentals<strong></h1>
+    <h1>TAQ Car Rental<strong></h1>
       <h4>Looking for a vehicle? We have the best deals.<h4>
 </div></div>
-<%= cl_image_tag("Red_toyota",
-      width: 400, height: 300, crop: :fill) %>
-<%= cl_image_tag("Honda red",
-      width: 400, height: 300, crop: :fill) %>
-<%= cl_image_tag("Fiat",
-      width: 400, height: 300, crop: :fill) %>
-<%= cl_image_tag("Audi",
-      width: 400, height: 300, crop: :fill) %>
-<%= cl_image_tag("Nissan",
-      width: 400, height: 300, crop: :fill) %>
-<%= cl_image_tag("Toyota_white",
-      width: 400, height: 300, crop: :fill) %>
+
+ </div>
+<div class="container-cards">
 <div class="cards">
- <% @cars.each do |car| %>
-  <div class="card">
-        <%= link_to car.brand, car_path(car)  %>
-        <%= car.model %>
-        <%= car.year_of_production %>
-        <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
-        <%= link_to "edit", edit_car_path(car) %>
+  <% @cars.each do |car| %>
+    <%= link_to car_path(car) do %>
+      <div class="card">
+        <%= cl_image_tag car.photo.key, height: 250, width: 200, crop: :fill %>
+        <p><%= car.model %></p>
+        <p><%= car.year_of_production %></p>
+        <% if car.user == current_user%>
+          <%= link_to "edit", edit_car_path(car)%>
         <%= link_to "delete", car_path(car), class: "button-booking1",
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+        <% end %>
       </div>
+    <% end %>
   <%end%>
 </div>
-
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
-
-  </div>
-
- <p class="new-car-link"> <%= link_to "New car", new_car_path %> </p>
- </div>
+<br>
+<br>
+  <p class="new-car-link"> <%= link_to "New car", new_car_path %> </p>
+</div>
