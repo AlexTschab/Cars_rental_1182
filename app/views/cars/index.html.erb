@@ -6,12 +6,28 @@
     <h1>TAQ Car Rentals<strong></h1>
       <h4>Looking for a vehicle? We have the best deals.<h4>
 </div></div>
+<%= cl_image_tag("Red_toyota",
+      width: 400, height: 300, crop: :fill) %>
+<%= cl_image_tag("Honda red",
+      width: 400, height: 300, crop: :fill) %>
+<%= cl_image_tag("Fiat",
+      width: 400, height: 300, crop: :fill) %>
+<%= cl_image_tag("Audi",
+      width: 400, height: 300, crop: :fill) %>
+<%= cl_image_tag("Nissan",
+      width: 400, height: 300, crop: :fill) %>
+<%= cl_image_tag("Toyota_white",
+      width: 400, height: 300, crop: :fill) %>
 <div class="cards">
  <% @cars.each do |car| %>
   <div class="card">
         <%= link_to car.brand, car_path(car)  %>
         <%= car.model %>
         <%= car.year_of_production %>
+        <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= link_to "edit", edit_car_path(car) %>
+        <%= link_to "delete", car_path(car), class: "button-booking1",
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       </div>
   <%end%>
 </div>
