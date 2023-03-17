@@ -1,10 +1,12 @@
-<h1>create new car</h1>
+<div class="container-sf">
+<h1> Add new car</h1>
 <%= simple_form_for @car do |f| %>
   <%= f.input :brand %>
   <%= f.input :model %>
-  <%= f.input :fuel_type%>
-  <%= f.input :transmission%>
+  <%= f.input :fuel_type, collection: ["Electric", "Diesel", "Petrol"]%>
+  <%= f.input :transmission, collection: ["Automatic", "Manual"]%>
   <%= f.input :year_of_production%>
   <%= f.input :photo, as: :file %>
   <%= f.button :submit %>
 <% end %>
+</div>
